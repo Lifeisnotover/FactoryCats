@@ -101,3 +101,58 @@ if (tabPanels.length > 0) {
     panel.style.display = index === 0 ? 'grid' : 'none';
   });
 }
+
+const builderControls = document.querySelector('.builder-controls');
+if (builderControls) {
+  const builderAssets = {
+    body: {
+      cream: 'images/builder-body-cream.svg',
+      violet: 'images/builder-body-violet.svg',
+      mint: 'images/builder-body-mint.svg',
+    },
+    face: {
+      smile: 'images/builder-face-smile.svg',
+      dream: 'images/builder-face-dream.svg',
+      pixel: 'images/builder-face-pixel.svg',
+    },
+    tail: {
+      classic: 'images/builder-tail-classic.svg',
+      flare: 'images/builder-tail-flare.svg',
+      soft: 'images/builder-tail-soft.svg',
+    },
+  };
+
+  const bodyImg = document.getElementById('builder-body');
+  const faceImg = document.getElementById('builder-face');
+  const tailImg = document.getElementById('builder-tail');
+
+  builderControls.addEventListener('change', (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLInputElement) || target.type !== 'radio') {
+      return;
+    }
+
+    const part = target.name;
+    const value = target.value;
+
+    switch (part) {
+      case 'body':
+        if (bodyImg && builderAssets.body[value]) {
+          bodyImg.src = builderAssets.body[value];
+        }
+        break;
+      case 'face':
+        if (faceImg && builderAssets.face[value]) {
+          faceImg.src = builderAssets.face[value];
+        }
+        break;
+      case 'tail':
+        if (tailImg && builderAssets.tail[value]) {
+          tailImg.src = builderAssets.tail[value];
+        }
+        break;
+      default:
+        break;
+    }
+  });
+}

@@ -6,99 +6,66 @@
     <title>Neon Arc Cat — Котофабрика</title>
     <link rel="stylesheet" href="styles/main.css" />
   </head>
-  <body>
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="index.html">
-          <span class="brand-icon">🐾</span>
-          Котофабрика
-        </a>
-        <div class="search-bar">
-          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9.333 15.667a6.333 6.333 0 1 0 0-12.667 6.333 6.333 0 0 0 0 12.667Zm5.334-1.334 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
-          </svg>
-          <input type="search" placeholder="Поиск" aria-label="Поиск" />
-        </div>
-        <nav class="nav-actions">
-          <div class="catalog-toggle">
-            <button class="secondary-btn" type="button">Каталог</button>
-            <div class="catalog-menu">
-              <a href="catalog.html#ready">Готовые коты</a>
-              <a href="catalog.html#parts">Части</a>
-              <a href="catalog.html#sets">Сеты</a>
-              <a href="catalog.html#events">События</a>
-            </div>
-          </div>
+  <body class="app">
+    <header class="app-header">
+      <div class="container app-header__inner">
+        <a class="brand" href="catalog.html"><span class="brand-icon">🐾</span>Котофабрика</a>
+        <nav class="app-header__nav" aria-label="Основная навигация">
+          <a class="app-header__link" href="catalog.html">Каталог</a>
+          <a class="app-header__link" href="boxes.html">Боксы</a>
+          <a class="app-header__link" href="orders.html">Заказы</a>
+          <a class="app-header__link" href="community.html">Витрины</a>
+        </nav>
+        <div class="app-header__actions">
+          <label class="search-bar" aria-label="Поиск по товарам">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M9.333 15.667a6.333 6.333 0 1 0 0-12.667 6.333 6.333 0 0 0 0 12.667Zm5.334-1.334 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            </svg>
+            <input type="search" placeholder="Поиск" />
+          </label>
+          <a class="secondary-btn" href="builder.html">Конструктор</a>
           <a class="ghost-btn" href="favorites.html" aria-label="Избранное">❤️</a>
           <a class="ghost-btn" href="cart.html" aria-label="Корзина">🛒</a>
           <a class="ghost-btn" href="profile.html" aria-label="Профиль">👤</a>
-        </nav>
+        </div>
       </div>
     </header>
 
     <main class="section">
       <div class="container split-layout">
         <div class="panel" style="align-self:start;">
-          <div class="cat-card" style="margin:0 auto;">
-            <span class="orb"></span>
-            <span class="orb"></span>
-            <img src="images/cat-hero.svg" alt="Neon Arc Cat" />
+          <div class="product-preview">
+            <img src="images/cat-card-glow.svg" alt="Neon Arc Cat" />
           </div>
-          <div class="showcase-slider" style="margin-top:24px;">
-            <article class="showcase-card">
-              <div class="preview"></div>
-              <span class="text-muted">Без эффекта</span>
-            </article>
-            <article class="showcase-card">
-              <div class="preview"></div>
-              <span class="text-muted">Эффект "Лучи"</span>
-            </article>
-            <article class="showcase-card">
-              <div class="preview"></div>
-              <span class="text-muted">Хвост "Кристалл"</span>
-            </article>
-            <article class="showcase-card">
-              <div class="preview"></div>
-              <span class="text-muted">Фон "Неон"</span>
-            </article>
+          <div class="product-thumbs">
+            <img src="images/cat-card-glow.svg" alt="Без эффекта" />
+            <img src="images/cat-card-crystal.svg" alt="С хвостом Crystal" />
+            <img src="images/cat-card-aurora.svg" alt="Фон Aurora" />
           </div>
         </div>
         <div class="panel">
           <span class="tag">Легендарный</span>
-          <h1 style="font-size:2.8rem;line-height:1.1;">Neon Arc Cat</h1>
-          <p class="text-muted" style="margin-top:16px;">
-            Электрический котик, реагирующий на эмоции владельца. Сочетает в себе вспышки неоновых
-            линий, динамический хвост и уникальную эмоцию "Arc" для витрины.
+          <h1 class="product-title">Neon Arc Cat</h1>
+          <p class="text-muted product-description">
+            Электрический котик, реагирующий на эмоции владельца. Сочетает в себе вспышки неоновых линий,
+            динамический хвост и уникальную эмоцию «Arc» для витрины.
           </p>
-          <div style="display:flex;align-items:center;gap:16px;margin-top:24px;">
-            <span class="price-tag" style="font-size:1.2rem;">1 800 ₽</span>
+          <div class="product-meta">
+            <span class="price-tag">1 800 ₽</span>
             <span class="badge">В наличии</span>
           </div>
-          <div class="hero-actions" style="margin-top:28px;">
+          <div class="hero-actions product-actions">
             <button class="primary-btn" type="button">Добавить в корзину</button>
             <button class="secondary-btn" type="button">В избранное</button>
           </div>
-          <div style="margin-top:32px;display:grid;gap:20px;">
-            <div class="panel" style="background:rgba(255,255,255,0.02);">
-              <h3>Содержимое набора</h3>
-              <ul class="text-muted" style="margin-top:12px;display:grid;gap:8px;list-style:none;">
-                <li>• Скин "Neon Arc"</li>
-                <li>• Хвост "Impulse"</li>
-                <li>• Эмоция "Arc Spark"</li>
-                <li>• Витрина "Ночной мегаполис"</li>
-              </ul>
-            </div>
-            <div class="panel" style="background:rgba(255,255,255,0.02);">
-              <h3>Отзывы коллекционеров</h3>
-              <p class="text-muted" style="margin-top:12px;">
-                "Лучший набор сезона! Светится мягко, а эмоция Arc идеально подходит для ночной
-                витрины." — @neonpaws
-              </p>
-              <p class="text-muted" style="margin-top:12px;">
-                "Советую комбинировать с хвостом Crystal Tail и эффектом Aurora Aura." — @auroracat
-              </p>
-            </div>
-          </div>
+          <section class="product-details">
+            <h2>Что входит</h2>
+            <ul>
+              <li>Анимированная шерсть с эффектом электрических дуг</li>
+              <li>Три эксклюзивные эмоции и анимация витрины</li>
+              <li>Доступ к сезонному событию «Комета»</li>
+            </ul>
+          </section>
         </div>
       </div>
     </main>
