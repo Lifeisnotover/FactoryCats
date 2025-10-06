@@ -106,25 +106,42 @@ const builderControls = document.querySelector('.builder-controls');
 if (builderControls) {
   const builderAssets = {
     body: {
-      cream: 'images/builder-body-cream.svg',
-      violet: 'images/builder-body-violet.svg',
-      mint: 'images/builder-body-mint.svg',
+      cream: { body: '#body-1', pattern: '#stripes' },
+      violet: { body: '#body-2', pattern: '#spots' },
+      mint: { body: '#body-3', pattern: null },
     },
     face: {
-      smile: 'images/builder-face-smile.svg',
-      dream: 'images/builder-face-dream.svg',
-      pixel: 'images/builder-face-pixel.svg',
+      smile: { head: '#head-1', eyes: '#eyes-1', muzzle: '#muzzle-1', whiskers: '#whisk-1' },
+      dream: { head: '#head-2', eyes: '#eyes-2', muzzle: '#muzzle-2', whiskers: '#whisk-2' },
+      pixel: { head: '#head-3', eyes: '#eyes-3', muzzle: '#muzzle-1', whiskers: '#whisk-1' },
     },
     tail: {
-      classic: 'images/builder-tail-classic.svg',
-      flare: 'images/builder-tail-flare.svg',
-      soft: 'images/builder-tail-soft.svg',
+      classic: '#tail-1',
+      flare: '#tail-2',
+      soft: '#tail-3',
     },
   };
 
-  const bodyImg = document.getElementById('builder-body');
-  const faceImg = document.getElementById('builder-face');
-  const tailImg = document.getElementById('builder-tail');
+  const spritePath = 'images/cats-sprite.svg';
+
+  const bodyUse = document.getElementById('builder-body');
+  const patternUse = document.getElementById('builder-pattern');
+  const headUse = document.getElementById('builder-head');
+  const eyesUse = document.getElementById('builder-eyes');
+  const muzzleUse = document.getElementById('builder-muzzle');
+  const whiskersUse = document.getElementById('builder-whiskers');
+  const tailUse = document.getElementById('builder-tail');
+
+  const setUseHref = (element, symbolId) => {
+    if (!element) return;
+    if (symbolId) {
+      element.setAttribute('href', `${spritePath}${symbolId}`);
+      element.style.display = '';
+    } else {
+      element.removeAttribute('href');
+      element.style.display = 'none';
+    }
+  };
 
   builderControls.addEventListener('change', (event) => {
     const target = event.target;
@@ -137,18 +154,24 @@ if (builderControls) {
 
     switch (part) {
       case 'body':
-        if (bodyImg && builderAssets.body[value]) {
-          bodyImg.src = builderAssets.body[value];
+        if (builderAssets.body[value]) {
+          const { body, pattern } = builderAssets.body[value];
+          setUseHref(bodyUse, body);
+          setUseHref(patternUse, pattern);
         }
         break;
       case 'face':
-        if (faceImg && builderAssets.face[value]) {
-          faceImg.src = builderAssets.face[value];
+        if (builderAssets.face[value]) {
+          const { head, eyes, muzzle, whiskers } = builderAssets.face[value];
+          setUseHref(headUse, head);
+          setUseHref(eyesUse, eyes);
+          setUseHref(muzzleUse, muzzle);
+          setUseHref(whiskersUse, whiskers);
         }
         break;
       case 'tail':
-        if (tailImg && builderAssets.tail[value]) {
-          tailImg.src = builderAssets.tail[value];
+        if (builderAssets.tail[value]) {
+          setUseHref(tailUse, builderAssets.tail[value]);
         }
         break;
       default:
