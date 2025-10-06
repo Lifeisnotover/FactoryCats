@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Котофабрика — Собери своего цифрового котика</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-icon">🐾</span>
+          Котофабрика
+        </a>
+        <div class="search-bar">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.333 15.667a6.333 6.333 0 1 0 0-12.667 6.333 6.333 0 0 0 0 12.667Zm5.334-1.334 4 4" stroke="white" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+          <input type="search" placeholder="Поиск скинов и котов" aria-label="Поиск" />
+        </div>
+        <nav class="nav-actions">
+          <div class="catalog-toggle">
+            <button class="secondary-btn" type="button">Каталог</button>
+            <div class="catalog-menu">
+              <a href="index.html#builder" data-scroll-to="#builder">Конструктор кота</a>
+              <a href="index.html#skins" data-scroll-to="#skins">Редкие скины</a>
+              <a href="catalog.html#ready">Готовые коты</a>
+              <a href="catalog.html#parts">Запчасти</a>
+              <a href="catalog.html#sets">Сеты</a>
+              <a href="catalog.html#events">События</a>
+              <a href="community.html">Витрина сообщества</a>
+            </div>
+          </div>
+          <a class="ghost-btn" href="favorites.html" aria-label="Избранное">
+            <span aria-hidden="true">❤️</span>
+          </a>
+          <a class="ghost-btn" href="cart.html" aria-label="Корзина">
+            <span aria-hidden="true">🛒</span>
+          </a>
+          <a class="ghost-btn" href="profile.html" aria-label="Профиль">
+            <span aria-hidden="true">👤</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" id="hero">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <span class="tag">Новая эра цифровых питомцев</span>
+            <h1>
+              Соберите уникального котика из тысяч комбинаций и поделитесь им с миром
+            </h1>
+            <p class="hero-description">
+              Конструктор Котофабрики позволяет соединять базовые модели, редкие скины
+              и спецэффекты, создавая коллекционные образы. Улучшайте котиков, открывайте
+              боксы и пополняйте витрину любимцев.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-btn" href="#builder" data-scroll-to="#builder">Собрать котика</a>
+              <a class="secondary-btn" href="login.html">Войти в аккаунт</a>
+            </div>
+          </div>
+          <div class="hero-illustration">
+            <div class="cat-card">
+              <span class="orb"></span>
+              <span class="orb"></span>
+              <img src="images/cat-hero.svg" alt="Неоновый котик" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="builder">
+        <div class="container">
+          <div class="split-layout">
+            <div>
+              <span class="tag">Конструктор</span>
+              <h2>Соберите котика по частям</h2>
+              <p class="text-muted">
+                Выбирайте мордочки, хвосты, окрас и анимации. Комбинируйте элементы, сохраняйте
+                любимые варианты и делитесь результатом с друзьями.
+              </p>
+              <div class="hero-actions" style="margin-top: 24px;">
+                <button class="primary-btn" type="button">Создать пресет</button>
+                <button class="secondary-btn" type="button">Случайная сборка</button>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="tabs" role="tablist">
+                <button class="active" data-tab-target="full">Готовые коты</button>
+                <button data-tab-target="faces">Мордочки</button>
+                <button data-tab-target="tails">Хвосты</button>
+                <button data-tab-target="effects">Эффекты</button>
+              </div>
+              <div class="cards-grid" data-tab-panel="full">
+                <article class="catalog-card">
+                  <div class="preview">Неоновые волны</div>
+                  <h3>Neon Arc Cat</h3>
+                  <p>Легендарный образ с электрическими усами и переливами по всему телу.</p>
+                  <div class="meta">
+                    <span>1 800 ₽</span>
+                    <button type="button">В корзину</button>
+                  </div>
+                </article>
+                <article class="catalog-card">
+                  <div class="preview">Космос</div>
+                  <h3>Galaxy Whisper</h3>
+                  <p>Комбинация космического градиента и эффектов невесомости хвоста.</p>
+                  <div class="meta">
+                    <span>1 350 ₽</span>
+                    <button type="button">В корзину</button>
+                  </div>
+                </article>
+                <article class="catalog-card">
+                  <div class="preview">Пиксели</div>
+                  <h3>Retro Pixel</h3>
+                  <p>Пиксельный скин со спецэффектом глитча и 8-bit музыкальным сопровождением.</p>
+                  <div class="meta">
+                    <span>890 ₽</span>
+                    <button type="button">В корзину</button>
+                  </div>
+                </article>
+              </div>
+              <div class="cards-grid" data-tab-panel="faces">
+                <article class="catalog-card">
+                  <div class="preview">Мята</div>
+                  <h3>Mint Smile</h3>
+                  <p>Игривые глаза и мягкое свечение. Подходит для веселых образов.</p>
+                  <div class="meta">
+                    <span>320 ₽</span>
+                    <button type="button">Добавить</button>
+                  </div>
+                </article>
+                <article class="catalog-card">
+                  <div class="preview">Лиса</div>
+                  <h3>Foxy Eyes</h3>
+                  <p>Хищный взгляд с вытянутыми линиями и оранжевым свечением.</p>
+                  <div class="meta">
+                    <span>450 ₽</span>
+                    <button type="button">Добавить</button>
+                  </div>
+                </article>
+              </div>
+              <div class="cards-grid" data-tab-panel="tails">
+                <article class="catalog-card">
+                  <div class="preview">Лед</div>
+                  <h3>Crystal Tail</h3>
+                  <p>Сегментированный хвост с ледяными кристаллами и сверкающим шлейфом.</p>
+                  <div class="meta">
+                    <span>260 ₽</span>
+                    <button type="button">Добавить</button>
+                  </div>
+                </article>
+                <article class="catalog-card">
+                  <div class="preview">Снежок</div>
+                  <h3>Fluffy Snow</h3>
+                  <p>Пушистый хвост, реагирующий на эмоции кота. Идеален для милых образов.</p>
+                  <div class="meta">
+                    <span>290 ₽</span>
+                    <button type="button">Добавить</button>
+                  </div>
+                </article>
+              </div>
+              <div class="cards-grid" data-tab-panel="effects">
+                <article class="catalog-card">
+                  <div class="preview">Сияние</div>
+                  <h3>Aurora Aura</h3>
+                  <p>Нежные переливы северного сияния вокруг тела котика.</p>
+                  <div class="meta">
+                    <span>180 ₽</span>
+                    <button type="button">Добавить</button>
+                  </div>
+                </article>
+                <article class="catalog-card">
+                  <div class="preview">Искры</div>
+                  <h3>Stardust Sparks</h3>
+                  <p>Искристый след и анимированный пыльцевой шлейф при каждом движении.</p>
+                  <div class="meta">
+                    <span>210 ₽</span>
+                    <button type="button">Добавить</button>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skins">
+        <div class="container">
+          <span class="tag">Редкие наборы</span>
+          <h2>Откройте легендарные боксы</h2>
+          <div class="cards-grid">
+            <article class="catalog-card">
+              <div class="preview">Легенда</div>
+              <h3>Mythic Aurora</h3>
+              <p>Сияющие полосы, меняющие цвет в зависимости от эмоций владельца.</p>
+              <div class="meta">
+                <span>4 500 ₽</span>
+                <button type="button">В корзину</button>
+              </div>
+            </article>
+            <article class="catalog-card">
+              <div class="preview">Галактика</div>
+              <h3>Orbit Pulse</h3>
+              <p>Орбитальные кольца и эффект невесомости. Доступен в сезонном боксе.</p>
+              <div class="meta">
+                <span>Бокс</span>
+                <button type="button">Открыть</button>
+              </div>
+            </article>
+            <article class="catalog-card">
+              <div class="preview">Фантом</div>
+              <h3>Phantom Veil</h3>
+              <p>Полупрозрачный скин с мягкими голографическими слоями.</p>
+              <div class="meta">
+                <span>2 900 ₽</span>
+                <button type="button">В корзину</button>
+              </div>
+            </article>
+            <article class="catalog-card">
+              <div class="preview">Фейерверк</div>
+              <h3>Fireworks Bloom</h3>
+              <p>Праздничная анимация и сияющие искры на кончиках усов.</p>
+              <div class="meta">
+                <span>Событие</span>
+                <button type="button">Узнать</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="orders">
+        <div class="container">
+          <span class="tag">Процесс</span>
+          <h2>Оформление заказа</h2>
+          <div class="split-layout">
+            <div class="panel">
+              <h3>Последние позиции в корзине</h3>
+              <div class="checkout-list">
+                <div class="checkout-item">
+                  <div class="checkout-thumb"></div>
+                  <div>
+                    <h4>Neon Arc Cat</h4>
+                    <p class="text-muted">Легендарный набор · 1 шт.</p>
+                  </div>
+                  <button class="remove-btn" type="button" aria-label="Удалить">✕</button>
+                </div>
+                <div class="checkout-item">
+                  <div class="checkout-thumb"></div>
+                  <div>
+                    <h4>Crystal Tail</h4>
+                    <p class="text-muted">Хвост · 2 шт.</p>
+                  </div>
+                  <button class="remove-btn" type="button" aria-label="Удалить">✕</button>
+                </div>
+                <div class="checkout-item">
+                  <div class="checkout-thumb"></div>
+                  <div>
+                    <h4>Aurora Aura</h4>
+                    <p class="text-muted">Эффект · 1 шт.</p>
+                  </div>
+                  <button class="remove-btn" type="button" aria-label="Удалить">✕</button>
+                </div>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;">
+                <span class="price-tag">Итого: 2 570 ₽</span>
+                <a class="primary-btn" href="checkout.html">Оформить</a>
+              </div>
+            </div>
+            <div class="panel">
+              <h3>Как это работает</h3>
+              <div class="multi-step">
+                <div class="stepper">
+                  <span class="step active">1. Выбор частей</span>
+                  <span class="step active">2. Настройки и эффекты</span>
+                  <span class="step">3. Оплата и доставка</span>
+                </div>
+                <p class="text-muted">
+                  После оплаты цифровой котик попадёт в вашу коллекцию и будет отправлен на почту
+                  в формате интерактивной карточки. Редкие комбинации получают дополнительную
+                  анимацию и бейджи коллекционера.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hero-actions" style="margin-top: 32px;">
+            <a class="secondary-btn" href="cart.html">Перейти в корзину</a>
+            <a class="primary-btn" href="orders.html">История заказов</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="favorites">
+        <div class="container">
+          <span class="tag">Любимые котики</span>
+          <h2>Коллекция избранных</h2>
+          <div class="showcase-slider">
+            <article class="showcase-card">
+              <div class="preview"></div>
+              <div>
+                <h4>Sky Paws</h4>
+                <p class="text-muted">Светящийся хвост и облачные лапки.</p>
+              </div>
+            </article>
+            <article class="showcase-card">
+              <div class="preview"></div>
+              <div>
+                <h4>Shadow Blink</h4>
+                <p class="text-muted">Эпический невидимый корпус и сияющие глаза.</p>
+              </div>
+            </article>
+            <article class="showcase-card">
+              <div class="preview"></div>
+              <div>
+                <h4>Sakura Bloom</h4>
+                <p class="text-muted">Весенние лепестки и мягкая пастельная палитра.</p>
+              </div>
+            </article>
+            <article class="showcase-card">
+              <div class="preview"></div>
+              <div>
+                <h4>Cyber Tiger</h4>
+                <p class="text-muted">Неоновая броня и механический хвост.</p>
+              </div>
+            </article>
+            <article class="showcase-card">
+              <div class="preview"></div>
+              <div>
+                <h4>Crystal Purr</h4>
+                <p class="text-muted">Хрустальные усы и мягкое сияние.</p>
+              </div>
+            </article>
+          </div>
+          <div class="hero-actions" style="margin-top: 32px;">
+            <a class="secondary-btn" href="favorites.html">Открыть избранное</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="community">
+        <div class="container">
+          <span class="tag">Сообщество</span>
+          <h2>Витрина редких котиков пользователей</h2>
+          <div class="cards-grid">
+            <article class="catalog-card">
+              <div class="preview">x34</div>
+              <h3>Профиль @meowster</h3>
+              <p>Коллекция легендарных котиков с эксклюзивных событий и стримов.</p>
+              <div class="meta">
+                <span>34 кота</span>
+                <button type="button">Смотреть</button>
+              </div>
+            </article>
+            <article class="catalog-card">
+              <div class="preview">x12</div>
+              <h3>Профиль @aurora</h3>
+              <p>Редкие скины северного сияния и мягкие эффекты свечения.</p>
+              <div class="meta">
+                <span>12 котов</span>
+                <button type="button">Смотреть</button>
+              </div>
+            </article>
+            <article class="catalog-card">
+              <div class="preview">x21</div>
+              <h3>Профиль @pixelpaws</h3>
+              <p>Пиксельные котики со звуковым сопровождением и 8-bit анимацией.</p>
+              <div class="meta">
+                <span>21 кот</span>
+                <button type="button">Смотреть</button>
+              </div>
+            </article>
+          </div>
+          <div class="hero-actions" style="margin-top: 32px;">
+            <a class="primary-btn" href="community.html">Перейти к витрине</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="profile">
+        <div class="container">
+          <span class="tag">Профиль</span>
+          <h2>Управление аккаунтом</h2>
+          <div class="split-layout">
+            <div class="panel">
+              <div class="profile-header">
+                <div class="avatar-frame">AVA</div>
+                <div class="profile-info">
+                  <h3>Александра Кэт</h3>
+                  <p class="text-muted">meow@factorycats.io</p>
+                  <p class="text-muted">+7 (900) 123-45-67</p>
+                  <div class="profile-actions">
+                    <a class="secondary-btn" href="profile-edit.html">Редактировать</a>
+                    <a class="secondary-btn" href="orders.html">История заказов</a>
+                  </div>
+                </div>
+              </div>
+              <div style="margin-top: 32px;">
+                <span class="badge">Коллекционер</span>
+                <p class="text-muted" style="margin-top: 12px;">
+                  Вы открыли 5 легендарных боксов и поделились 12 котиками с сообществом.
+                </p>
+              </div>
+            </div>
+            <div class="panel">
+              <h3>Последние заказы</h3>
+              <div class="checkout-list">
+                <div class="checkout-item">
+                  <div class="checkout-thumb"></div>
+                  <div>
+                    <h4>Galaxy Whisper</h4>
+                    <p class="text-muted">Отправлен 02.10 · статус: доставлено</p>
+                  </div>
+                </div>
+                <div class="checkout-item">
+                  <div class="checkout-thumb"></div>
+                  <div>
+                    <h4>Fireworks Bloom</h4>
+                    <p class="text-muted">Отправлен 25.09 · статус: обработка</p>
+                  </div>
+                </div>
+                <div class="checkout-item">
+                  <div class="checkout-thumb"></div>
+                  <div>
+                    <h4>Mint Smile</h4>
+                    <p class="text-muted">Отправлен 19.09 · статус: доставлено</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-actions" style="margin-top: 32px;">
+            <a class="secondary-btn" href="profile.html">Смотреть профиль</a>
+            <a class="secondary-btn" href="profile-edit.html">Настроить аккаунт</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-grid">
+        <div>
+          <div class="brand">
+            <span class="brand-icon">🐾</span>
+            Котофабрика
+          </div>
+          <p class="text-muted" style="margin-top: 16px;">
+            Создавайте, кастомизируйте и делитесь цифровыми котиками. Присоединяйтесь к комьюнити
+            коллекционеров, участвуйте в сезонных событиях и собирайте уникальные наборы.
+          </p>
+        </div>
+        <div>
+          <h4>Навигация</h4>
+          <div class="footer-links" style="margin-top: 16px;">
+            <a href="index.html#builder" data-scroll-to="#builder">Конструктор</a>
+            <a href="index.html#skins" data-scroll-to="#skins">Редкие скины</a>
+            <a href="favorites.html">Избранное</a>
+            <a href="community.html">Сообщество</a>
+            <a href="orders.html">Заказы</a>
+            <a href="profile.html">Профиль</a>
+          </div>
+        </div>
+        <div>
+          <h4>Поддержка</h4>
+          <div class="footer-links" style="margin-top: 16px;">
+            <a href="mailto:support@factorycats.io">support@factorycats.io</a>
+            <a href="#">Цифровая лицензия</a>
+            <a href="#">Политика приватности</a>
+            <a href="#">Условия использования</a>
+          </div>
+        </div>
+        <div>
+          <h4>Мы в соцсетях</h4>
+          <div class="footer-socials" style="margin-top: 16px;">
+            <a href="#" aria-label="Discord">💬</a>
+            <a href="#" aria-label="Telegram">📣</a>
+            <a href="#" aria-label="VK">🐱</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
