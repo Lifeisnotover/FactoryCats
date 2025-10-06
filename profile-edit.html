@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Редактирование профиля — Котофабрика</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-icon">🐾</span>
+          Котофабрика
+        </a>
+        <div class="search-bar">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.333 15.667a6.333 6.333 0 1 0 0-12.667 6.333 6.333 0 0 0 0 12.667Zm5.334-1.334 4 4" stroke="white" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+          <input type="search" placeholder="Поиск" aria-label="Поиск" />
+        </div>
+        <nav class="nav-actions">
+          <div class="catalog-toggle">
+            <button class="secondary-btn" type="button">Каталог</button>
+            <div class="catalog-menu">
+              <a href="catalog.html#ready">Готовые коты</a>
+              <a href="catalog.html#parts">Части</a>
+              <a href="catalog.html#sets">Сеты</a>
+              <a href="catalog.html#events">События</a>
+            </div>
+          </div>
+          <a class="ghost-btn" href="favorites.html" aria-label="Избранное">❤️</a>
+          <a class="ghost-btn" href="cart.html" aria-label="Корзина">🛒</a>
+          <a class="ghost-btn" href="profile.html" aria-label="Профиль">👤</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container split-layout">
+        <div class="panel">
+          <div class="profile-header">
+            <div class="avatar-frame">AVA</div>
+            <button class="secondary-btn" type="button">Изменить аватар</button>
+          </div>
+          <form class="multi-step" action="profile.html" method="get" style="margin-top:32px;">
+            <div class="form-group">
+              <label for="edit-name">Имя пользователя</label>
+              <input id="edit-name" name="name" type="text" placeholder="Александра Кэт" value="Александра Кэт" />
+            </div>
+            <div class="form-group">
+              <label for="edit-email">Email</label>
+              <input id="edit-email" name="email" type="email" placeholder="meow@factorycats.io" value="meow@factorycats.io" />
+            </div>
+            <div class="form-group">
+              <label for="edit-phone">Телефон</label>
+              <input id="edit-phone" name="phone" type="tel" placeholder="+7 (900) 123-45-67" value="+7 (900) 123-45-67" />
+            </div>
+            <div class="form-group">
+              <label for="edit-bio">О себе</label>
+              <textarea id="edit-bio" name="bio" rows="4" placeholder="Расскажите о своей коллекции">Коллекционирую неоновые и космические наборы, люблю устраивать обмен редкими котиками.</textarea>
+            </div>
+            <div class="hero-actions">
+              <button class="primary-btn" type="submit">Сохранить изменения</button>
+              <a class="secondary-btn" href="profile.html">Отмена</a>
+            </div>
+          </form>
+        </div>
+        <div class="panel">
+          <h3>Коллекция редких котов</h3>
+          <div class="cards-grid" style="margin-top:20px;">
+            <article class="catalog-card">
+              <div class="preview">Legend</div>
+              <h3>Neon Arc Cat</h3>
+              <p class="text-muted">Легендарный набор</p>
+              <div class="meta">
+                <span>Коллекция</span>
+                <button type="button">Удалить</button>
+              </div>
+            </article>
+            <article class="catalog-card">
+              <div class="preview">Mythic</div>
+              <h3>Mythic Aurora</h3>
+              <p class="text-muted">Мифический скин</p>
+              <div class="meta">
+                <span>Коллекция</span>
+                <button type="button">Удалить</button>
+              </div>
+            </article>
+            <article class="catalog-card">
+              <div class="preview">Event</div>
+              <h3>Fireworks Bloom</h3>
+              <p class="text-muted">Событийный набор</p>
+              <div class="meta">
+                <span>Коллекция</span>
+                <button type="button">Удалить</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

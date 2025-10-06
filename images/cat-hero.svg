@@ -1,0 +1,27 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="paint0_linear" x1="96" y1="64" x2="416" y2="448" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF7AC3" />
+      <stop offset="0.45" stop-color="#A857FF" />
+      <stop offset="1" stop-color="#44D2FF" />
+    </linearGradient>
+    <linearGradient id="paint1_linear" x1="196" y1="148" x2="352" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7F9FF" stop-opacity="0.9" />
+      <stop offset="1" stop-color="#E4E8FF" stop-opacity="0.35" />
+    </linearGradient>
+  </defs>
+  <rect x="64" y="92" width="384" height="328" rx="120" fill="url(#paint0_linear)" opacity="0.16" />
+  <path d="M171 146c8.5-30.5 35-56 72-56s63.5 25.5 72 56c42.5 5.5 76 40.5 76 84 0 54-60.5 132-148 200-87.5-68-148-146-148-200 0-43.5 33.5-78.5 76-84Z" fill="url(#paint0_linear)" />
+  <path d="M188 172c6.5-22.5 26.5-40 55-40s48.5 17.5 55 40c30.5 4 55 29 55 60 0 38.5-43.5 93.5-110 142-66.5-48.5-110-103.5-110-142 0-31 24.5-56 55-60Z" fill="#10142A" opacity="0.65" />
+  <path d="M180 188c7.5-17.5 26.5-30 53-30s45.5 12.5 53 30c23.5 3.5 42 22 42 44 0 28.5-34 68.5-95 110-61-41.5-95-81.5-95-110 0-22 18.5-40.5 42-44Z" fill="url(#paint1_linear)" />
+  <ellipse cx="228" cy="220" rx="22" ry="26" fill="#20264D" />
+  <ellipse cx="284" cy="220" rx="22" ry="26" fill="#20264D" />
+  <circle cx="220" cy="214" r="8" fill="#F6F7FB" />
+  <circle cx="276" cy="214" r="8" fill="#F6F7FB" />
+  <path d="M256 268c-12 0-22 9-22 20 0 14 10 30 22 30s22-16 22-30c0-11-10-20-22-20Z" fill="#FF7AC3" />
+  <path d="M208 316c14 12 30 20 48 20s34-8 48-20" stroke="#F6F7FB" stroke-width="6" stroke-linecap="round" opacity="0.6" />
+  <path d="M196 182c-16-18-30-46-30-80-22 14-42 46-42 84" stroke="#FF7AC3" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity="0.65" />
+  <path d="M316 182c16-18 30-46 30-80 22 14 42 46 42 84" stroke="#44D2FF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity="0.65" />
+  <path d="M172 302c-10 14-18 30-18 46 0 26 18 50 46 64" stroke="#FF7AC3" stroke-width="8" stroke-linecap="round" opacity="0.45" />
+  <path d="M340 302c10 14 18 30 18 46 0 26-18 50-46 64" stroke="#44D2FF" stroke-width="8" stroke-linecap="round" opacity="0.45" />
+</svg>
