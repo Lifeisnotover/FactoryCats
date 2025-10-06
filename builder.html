@@ -34,16 +34,30 @@
       <section class="section">
         <div class="container builder-layout">
           <div class="builder-preview">
-            <h1>Соберите котика из деталей корзины</h1>
-            <p class="text-muted">
+            <figure class="builder-stage" role="img" aria-label="Превью котика">
+              <div class="builder-stage__frame">
+                <svg class="builder-canvas" viewBox="0 0 140 160" aria-hidden="true">
+                  <g class="builder-tail" transform="translate(12,72)">
+                    <use id="builder-tail" href="images/cats-sprite.svg#tail-1" class="sketch"></use>
+                  </g>
+                  <g class="builder-body" transform="translate(8,72)">
+                    <use id="builder-body" href="images/cats-sprite.svg#body-1" class="sketch"></use>
+                    <use id="builder-pattern" href="images/cats-sprite.svg#stripes" class="sketch"></use>
+                  </g>
+                  <g class="builder-face" transform="translate(20,12)">
+                    <use id="builder-head" href="images/cats-sprite.svg#head-1" class="sketch"></use>
+                    <use id="builder-eyes" href="images/cats-sprite.svg#eyes-1" class="sketch"></use>
+                    <use id="builder-muzzle" href="images/cats-sprite.svg#muzzle-1" class="sketch"></use>
+                    <use id="builder-whiskers" href="images/cats-sprite.svg#whisk-1" class="sketch"></use>
+                  </g>
+                </svg>
+              </div>
+            </figure>
+            <h1 class="builder-title">Соберите котика из деталей корзины</h1>
+            <p class="builder-description text-muted">
               Выбранные части синхронизируются с корзиной. Меняйте мордочки, хвосты и эффекты — изображение
               котика обновится мгновенно.
             </p>
-            <div class="builder-stage" role="img" aria-label="Превью котика">
-              <img id="builder-body" src="images/builder-body-cream.svg" alt="Тело котика" />
-              <img id="builder-face" src="images/builder-face-smile.svg" alt="Мордочка котика" />
-              <img id="builder-tail" src="images/builder-tail-classic.svg" alt="Хвост котика" />
-            </div>
           </div>
 
           <form class="builder-controls" aria-label="Доступные детали из корзины">
