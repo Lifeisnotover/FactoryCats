@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Рабочее пространство — Котофабрика</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-icon">🐾</span>
+          Котофабрика
+        </a>
+        <div class="search-bar">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M9.333 15.667a6.333 6.333 0 1 0 0-12.667 6.333 6.333 0 0 0 0 12.667Zm5.334-1.334 4 4"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+            />
+          </svg>
+          <input type="search" placeholder="Искать детали, боксы и котиков" aria-label="Поиск" />
+        </div>
+        <nav class="nav-actions">
+          <a class="ghost-btn" href="favorites.html" aria-label="Избранное">❤️</a>
+          <a class="ghost-btn" href="cart.html" aria-label="Корзина">🛒</a>
+          <a class="ghost-btn" href="profile.html" aria-label="Профиль">👤</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section workspace">
+        <div class="container">
+          <div class="workspace-intro">
+            <h1>Рабочее пространство коллекционера</h1>
+            <p class="text-muted">
+              Используйте вкладки ниже, чтобы собирать котиков, открывать сезонные боксы, оформлять заказы,
+              управлять избранной коллекцией и изучать витрину редких питомцев сообщества.
+            </p>
+          </div>
+
+          <div class="panel workspace-panel">
+            <nav class="tabs workspace-tabs" role="tablist">
+              <button
+                id="constructor-tab"
+                class="active"
+                data-tab-group="workspace"
+                data-tab-target="constructor"
+                role="tab"
+                aria-selected="true"
+                aria-controls="constructor"
+              >
+                Конструктор
+              </button>
+              <button
+                id="boxes-tab"
+                data-tab-group="workspace"
+                data-tab-target="boxes"
+                role="tab"
+                aria-selected="false"
+                aria-controls="boxes"
+              >
+                Боксы
+              </button>
+              <button
+                id="checkout-tab"
+                data-tab-group="workspace"
+                data-tab-target="checkout"
+                role="tab"
+                aria-selected="false"
+                aria-controls="checkout"
+              >
+                Оформление заказов
+              </button>
+              <button
+                id="favorites-tab"
+                data-tab-group="workspace"
+                data-tab-target="favorites"
+                role="tab"
+                aria-selected="false"
+                aria-controls="favorites"
+              >
+                Коллекция избранных
+              </button>
+              <button
+                id="showcase-tab"
+                data-tab-group="workspace"
+                data-tab-target="showcase"
+                role="tab"
+                aria-selected="false"
+                aria-controls="showcase"
+              >
+                Витрина редких котиков
+              </button>
+            </nav>
+
+            <div class="tab-panels">
+              <div
+                class="tab-panel"
+                id="constructor"
+                data-tab-group="workspace"
+                data-tab-panel="constructor"
+                data-tab-display="block"
+                role="tabpanel"
+                aria-labelledby="constructor-tab"
+              >
+                <div class="split-layout">
+                  <div>
+                    <span class="tag">Конструктор</span>
+                    <h2>Соберите котика по частям</h2>
+                    <p class="text-muted">
+                      Выбирайте мордочки, хвосты, окрас и анимации. Комбинируйте элементы, сохраняйте любимые
+                      варианты и делитесь результатом с друзьями.
+                    </p>
+                    <div class="hero-actions" style="margin-top: 24px;">
+                      <button class="primary-btn" type="button">Создать пресет</button>
+                      <button class="secondary-btn" type="button">Случайная сборка</button>
+                    </div>
+                  </div>
+                  <div class="panel" style="background: var(--surface);">
+                    <div class="tabs inner-tabs" role="tablist">
+                      <button
+                        class="active"
+                        data-tab-group="constructor"
+                        data-tab-target="constructor-full"
+                        role="tab"
+                        id="constructor-full-tab"
+                        aria-controls="constructor-full-panel"
+                        aria-selected="true"
+                      >
+                        Готовые коты
+                      </button>
+                      <button
+                        data-tab-group="constructor"
+                        data-tab-target="constructor-faces"
+                        role="tab"
+                        id="constructor-faces-tab"
+                        aria-controls="constructor-faces-panel"
+                        aria-selected="false"
+                      >
+                        Мордочки
+                      </button>
+                      <button
+                        data-tab-group="constructor"
+                        data-tab-target="constructor-tails"
+                        role="tab"
+                        id="constructor-tails-tab"
+                        aria-controls="constructor-tails-panel"
+                        aria-selected="false"
+                      >
+                        Хвосты
+                      </button>
+                      <button
+                        data-tab-group="constructor"
+                        data-tab-target="constructor-effects"
+                        role="tab"
+                        id="constructor-effects-tab"
+                        aria-controls="constructor-effects-panel"
+                        aria-selected="false"
+                      >
+                        Эффекты
+                      </button>
+                    </div>
+                    <div
+                      class="cards-grid"
+                      data-tab-group="constructor"
+                      data-tab-panel="constructor-full"
+                      data-tab-display="grid"
+                      role="tabpanel"
+                      id="constructor-full-panel"
+                      aria-labelledby="constructor-full-tab"
+                    >
+                      <article class="catalog-card">
+                        <div class="preview">Неоновые волны</div>
+                        <h3>Neon Arc Cat</h3>
+                        <p>Легендарный образ с электрическими усами и переливами по всему телу.</p>
+                        <div class="meta">
+                          <span>1 800 ₽</span>
+                          <button type="button">В корзину</button>
+                        </div>
+                      </article>
+                      <article class="catalog-card">
+                        <div class="preview">Космос</div>
+                        <h3>Galaxy Whisper</h3>
+                        <p>Комбинация космического градиента и эффектов невесомости хвоста.</p>
+                        <div class="meta">
+                          <span>1 350 ₽</span>
+                          <button type="button">В корзину</button>
+                        </div>
+                      </article>
+                      <article class="catalog-card">
+                        <div class="preview">Пиксели</div>
+                        <h3>Retro Pixel</h3>
+                        <p>Пиксельный скин со спецэффектом глитча и 8-bit музыкальным сопровождением.</p>
+                        <div class="meta">
+                          <span>890 ₽</span>
+                          <button type="button">В корзину</button>
+                        </div>
+                      </article>
+                    </div>
+                    <div
+                      class="cards-grid"
+                      data-tab-group="constructor"
+                      data-tab-panel="constructor-faces"
+                      data-tab-display="grid"
+                      role="tabpanel"
+                      id="constructor-faces-panel"
+                      aria-labelledby="constructor-faces-tab"
+                    >
+                      <article class="catalog-card">
+                        <div class="preview">Мята</div>
+                        <h3>Mint Smile</h3>
+                        <p>Игривые глаза и мягкое свечение. Подходит для веселых образов.</p>
+                        <div class="meta">
+                          <span>320 ₽</span>
+                          <button type="button">Добавить</button>
+                        </div>
+                      </article>
+                      <article class="catalog-card">
+                        <div class="preview">Лиса</div>
+                        <h3>Foxy Eyes</h3>
+                        <p>Хищный взгляд с вытянутыми линиями и оранжевым свечением.</p>
+                        <div class="meta">
+                          <span>450 ₽</span>
+                          <button type="button">Добавить</button>
+                        </div>
+                      </article>
+                    </div>
+                    <div
+                      class="cards-grid"
+                      data-tab-group="constructor"
+                      data-tab-panel="constructor-tails"
+                      data-tab-display="grid"
+                      role="tabpanel"
+                      id="constructor-tails-panel"
+                      aria-labelledby="constructor-tails-tab"
+                    >
+                      <article class="catalog-card">
+                        <div class="preview">Лед</div>
+                        <h3>Crystal Tail</h3>
+                        <p>Сегментированный хвост с ледяными кристаллами и сверкающим шлейфом.</p>
+                        <div class="meta">
+                          <span>260 ₽</span>
+                          <button type="button">Добавить</button>
+                        </div>
+                      </article>
+                      <article class="catalog-card">
+                        <div class="preview">Снежок</div>
+                        <h3>Fluffy Snow</h3>
+                        <p>Пушистый хвост, реагирующий на эмоции кота. Идеален для милых образов.</p>
+                        <div class="meta">
+                          <span>290 ₽</span>
+                          <button type="button">Добавить</button>
+                        </div>
+                      </article>
+                    </div>
+                    <div
+                      class="cards-grid"
+                      data-tab-group="constructor"
+                      data-tab-panel="constructor-effects"
+                      data-tab-display="grid"
+                      role="tabpanel"
+                      id="constructor-effects-panel"
+                      aria-labelledby="constructor-effects-tab"
+                    >
+                      <article class="catalog-card">
+                        <div class="preview">Сияние</div>
+                        <h3>Aurora Aura</h3>
+                        <p>Нежные переливы северного сияния вокруг тела котика.</p>
+                        <div class="meta">
+                          <span>180 ₽</span>
+                          <button type="button">Добавить</button>
+                        </div>
+                      </article>
+                      <article class="catalog-card">
+                        <div class="preview">Искры</div>
+                        <h3>Stardust Sparks</h3>
+                        <p>Искристый след и анимированный пыльцевой шлейф при каждом движении.</p>
+                        <div class="meta">
+                          <span>210 ₽</span>
+                          <button type="button">Добавить</button>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tab-panel"
+                id="boxes"
+                data-tab-group="workspace"
+                data-tab-panel="boxes"
+                data-tab-display="block"
+                role="tabpanel"
+                aria-labelledby="boxes-tab"
+              >
+                <span class="tag">Редкие наборы</span>
+                <h2>Откройте легендарные боксы</h2>
+                <p class="text-muted" style="max-width: 720px;">
+                  Каждая капсула — это шанс получить уникальные материалы и эффектные скины. Следите за
+                  сезонными событиями, чтобы не пропустить лимитированные коллекции.
+                </p>
+                <div class="cards-grid" style="margin-top: 32px;">
+                  <article class="catalog-card">
+                    <div class="preview">Легенда</div>
+                    <h3>Mythic Aurora</h3>
+                    <p>Сияющие полосы, меняющие цвет в зависимости от эмоций владельца.</p>
+                    <div class="meta">
+                      <span>2 400 ₽</span>
+                      <button type="button">Открыть</button>
+                    </div>
+                  </article>
+                  <article class="catalog-card">
+                    <div class="preview">Фейерверк</div>
+                    <h3>Starfall Burst</h3>
+                    <p>Салют из искрящихся хвостов и анимированных отражений в глазах котика.</p>
+                    <div class="meta">
+                      <span>1 990 ₽</span>
+                      <button type="button">Открыть</button>
+                    </div>
+                  </article>
+                  <article class="catalog-card">
+                    <div class="preview">Гео</div>
+                    <h3>Crystal Forge</h3>
+                    <p>Минералы и геометрические формы для футуристичных образов.</p>
+                    <div class="meta">
+                      <span>1 450 ₽</span>
+                      <button type="button">Открыть</button>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <div
+                class="tab-panel"
+                id="checkout"
+                data-tab-group="workspace"
+                data-tab-panel="checkout"
+                data-tab-display="block"
+                role="tabpanel"
+                aria-labelledby="checkout-tab"
+              >
+                <span class="tag">Оформление</span>
+                <h2>Быстрое оформление заказа</h2>
+                <div class="split-layout" style="margin-top: 24px;">
+                  <div class="panel soft-panel">
+                    <h3>Корзина</h3>
+                    <ul class="stacked-list">
+                      <li>
+                        <div>
+                          <strong>Neon Arc Cat</strong>
+                          <p class="text-muted">Легендарный кот с электрическими усами</p>
+                        </div>
+                        <span>1 800 ₽</span>
+                      </li>
+                      <li>
+                        <div>
+                          <strong>Aurora Aura</strong>
+                          <p class="text-muted">Эффект северного сияния</p>
+                        </div>
+                        <span>180 ₽</span>
+                      </li>
+                    </ul>
+                    <div class="order-summary">
+                      <div><span>Промокод</span><button type="button">Добавить</button></div>
+                      <div><span>Итого</span><strong>1 980 ₽</strong></div>
+                    </div>
+                  </div>
+                  <form class="panel soft-panel checkout-form">
+                    <h3>Данные получателя</h3>
+                    <div class="form-group">
+                      <label for="name">Имя и фамилия</label>
+                      <input id="name" type="text" placeholder="Мария Котова" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input id="email" type="email" placeholder="meow@factorycats.io" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="address">Адрес доставки</label>
+                      <input id="address" type="text" placeholder="Улица Пиксельная, 12" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="payment">Способ оплаты</label>
+                      <select id="payment" required>
+                        <option>Карта</option>
+                        <option>Apple Pay</option>
+                        <option>Google Pay</option>
+                      </select>
+                    </div>
+                    <button class="primary-btn" type="submit">Подтвердить заказ</button>
+                  </form>
+                </div>
+              </div>
+
+              <div
+                class="tab-panel"
+                id="favorites"
+                data-tab-group="workspace"
+                data-tab-panel="favorites"
+                data-tab-display="block"
+                role="tabpanel"
+                aria-labelledby="favorites-tab"
+              >
+                <span class="tag">Избранное</span>
+                <h2>Коллекция избранных котиков</h2>
+                <p class="text-muted" style="max-width: 680px;">
+                  Сохраняйте лучшие находки, чтобы вернуться к ним позже или поделиться с друзьями. Управляйте
+                  подборками и добавляйте заметки к каждому любимцу.
+                </p>
+                <div class="cards-grid" style="margin-top: 32px;">
+                  <article class="catalog-card">
+                    <div class="preview">Лепестки</div>
+                    <h3>Sakura Bloom</h3>
+                    <p>Весенние оттенки и анимация падающих лепестков.</p>
+                    <div class="meta">
+                      <span>1 150 ₽</span>
+                      <button type="button">Удалить</button>
+                    </div>
+                  </article>
+                  <article class="catalog-card">
+                    <div class="preview">Сияние</div>
+                    <h3>Moonlit Drift</h3>
+                    <p>Призрачное свечение и мягкий туман вокруг хвоста.</p>
+                    <div class="meta">
+                      <span>970 ₽</span>
+                      <button type="button">Удалить</button>
+                    </div>
+                  </article>
+                  <article class="catalog-card">
+                    <div class="preview">Фокус</div>
+                    <h3>Illusionist</h3>
+                    <p>Игровые карты и магические всполохи при каждом движении.</p>
+                    <div class="meta">
+                      <span>1 540 ₽</span>
+                      <button type="button">Удалить</button>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <div
+                class="tab-panel"
+                id="showcase"
+                data-tab-group="workspace"
+                data-tab-panel="showcase"
+                data-tab-display="block"
+                role="tabpanel"
+                aria-labelledby="showcase-tab"
+              >
+                <span class="tag">Сообщество</span>
+                <h2>Витрина редких котиков пользователей</h2>
+                <div class="showcase-slider" role="list">
+                  <article class="showcase-card" role="listitem">
+                    <img src="images/cat-hero.svg" alt="Рисованный котик" />
+                    <div>
+                      <h3>Ether Pouncer</h3>
+                      <p class="text-muted">Создатель: Лиса М.| Редкость: Мифическая</p>
+                    </div>
+                  </article>
+                  <article class="showcase-card" role="listitem">
+                    <img src="images/cat-hero.svg" alt="Рисованный котик" />
+                    <div>
+                      <h3>Comet Tailor</h3>
+                      <p class="text-muted">Создатель: Райан Н.| Редкость: Легендарная</p>
+                    </div>
+                  </article>
+                  <article class="showcase-card" role="listitem">
+                    <img src="images/cat-hero.svg" alt="Рисованный котик" />
+                    <div>
+                      <h3>Arcane Bloom</h3>
+                      <p class="text-muted">Создатель: Юна К.| Редкость: Эпическая</p>
+                    </div>
+                  </article>
+                </div>
+                <p class="text-muted" style="margin-top: 24px;">
+                  Пролистывайте, чтобы найти вдохновение, и публикуйте своих котиков на витрину через вкладку
+                  профиля.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

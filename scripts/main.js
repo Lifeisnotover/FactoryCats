@@ -76,28 +76,79 @@ otpInputs.forEach((input, index) => {
   });
 });
 
-const tabs = document.querySelectorAll('[data-tab-target]');
-const tabPanels = document.querySelectorAll('[data-tab-panel]');
+const tabs = Array.from(document.querySelectorAll('[data-tab-target]'));
+const tabPanels = Array.from(document.querySelectorAll('[data-tab-panel]'));
+
+const tabsByGroup = new Map();
+const panelsByGroup = new Map();
 
 tabs.forEach((tab) => {
+  const group = tab.dataset.tabGroup || 'default';
+  const groupTabs = tabsByGroup.get(group) || [];
+  groupTabs.push(tab);
+  tabsByGroup.set(group, groupTabs);
+});
+
+tabPanels.forEach((panel) => {
+  const group = panel.dataset.tabGroup || 'default';
+  const groupPanels = panelsByGroup.get(group) || [];
+  groupPanels.push(panel);
+  panelsByGroup.set(group, groupPanels);
+});
+
+const activateTab = (group, targetId, updateHash = false) => {
+  const groupTabs = tabsByGroup.get(group) || [];
+  const groupPanels = panelsByGroup.get(group) || [];
+  if (groupTabs.length === 0 || groupPanels.length === 0) {
+    return;
+  }
+
+  const fallbackTarget = groupTabs[0].dataset.tabTarget;
+  const hasTarget = groupPanels.some((panel) => panel.dataset.tabPanel === targetId);
+  const resolvedTarget = hasTarget ? targetId : fallbackTarget;
+
+  groupPanels.forEach((panel) => {
+    const isActive = panel.dataset.tabPanel === resolvedTarget;
+    const displayValue = panel.dataset.tabDisplay || 'block';
+    panel.style.display = isActive ? displayValue : 'none';
+    panel.classList.toggle('active', isActive);
+    panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+  });
+
+  groupTabs.forEach((tab) => {
+    const isActive = tab.dataset.tabTarget === resolvedTarget;
+    tab.classList.toggle('active', isActive);
+    tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+  });
+
+  if (updateHash && resolvedTarget) {
+    history.replaceState(null, '', `#${resolvedTarget}`);
+  }
+};
+
+tabs.forEach((tab) => {
+  const group = tab.dataset.tabGroup || 'default';
   tab.addEventListener('click', () => {
-    const targetId = tab.getAttribute('data-tab-target');
-
-    tabs.forEach((btn) => btn.classList.remove('active'));
-    tabPanels.forEach((panel) => {
-      if (panel.getAttribute('data-tab-panel') === targetId) {
-        panel.style.display = 'grid';
-      } else {
-        panel.style.display = 'none';
-      }
-    });
-
-    tab.classList.add('active');
+    const targetId = tab.dataset.tabTarget;
+    const shouldUpdateHash = group === 'workspace';
+    activateTab(group, targetId, shouldUpdateHash);
   });
 });
 
-if (tabPanels.length > 0) {
-  tabPanels.forEach((panel, index) => {
-    panel.style.display = index === 0 ? 'grid' : 'none';
-  });
-}
+tabsByGroup.forEach((groupTabs, group) => {
+  const initialFromHash = group === 'workspace' ? window.location.hash.replace('#', '') : '';
+  const initialTarget = initialFromHash || groupTabs[0].dataset.tabTarget;
+  const updateHash = group === 'workspace' && !!initialFromHash;
+  activateTab(group, initialTarget, updateHash);
+});
+
+window.addEventListener('hashchange', () => {
+  const target = window.location.hash.replace('#', '');
+  if (!target) {
+    return;
+  }
+
+  if (tabsByGroup.has('workspace')) {
+    activateTab('workspace', target);
+  }
+});
