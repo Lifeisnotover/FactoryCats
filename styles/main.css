@@ -819,7 +819,7 @@ body::after {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.95rem;
+  font-size: 0.97rem;
 }
 
 .builder-summary {
