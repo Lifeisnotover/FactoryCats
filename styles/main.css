@@ -661,6 +661,18 @@ body::after {
   box-shadow: var(--shadow-md);
 }
 
+.order-card footer {
+  margin-top: auto;
+  margin-right: -24px;
+  margin-left: -24px;
+  margin-bottom: -24px;
+  padding: 18px 24px 24px;
+  background: rgba(116, 193, 116, 0.14);
+  border-top: 3px dashed rgba(116, 193, 116, 0.35);
+  display: flex;
+  justify-content: center;
+}
+
 .order-card header {
   display: flex;
   justify-content: space-between;
